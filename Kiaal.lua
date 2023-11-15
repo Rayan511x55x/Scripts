@@ -412,7 +412,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/SYSTEMBROKEN\\___"
+TitleBarLabel.Text = "....kiaal...."
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -1906,24 +1906,12 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: MalwareHUB \nDiscord: system_calix\nVersion: "..version
+Credits_Label.Text = "Made by: Dnwua\nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
 Credits_Label.TextXAlignment = Enum.TextXAlignment.Left
 Credits_Label.TextYAlignment = Enum.TextYAlignment.Top
-
-Crown.Name = "Crown"
-Crown.Parent = Background
-Crown.AnchorPoint = Vector2.new(0.300000012, 0.800000012)
-Crown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Crown.BackgroundTransparency = 1.000
-Crown.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Crown.BorderSizePixel = 0
-Crown.Rotation = -20.000
-Crown.Size = UDim2.new(0, 75, 0, 75)
-Crown.Image = "rbxassetid://12298407748"
-Crown.ImageColor3 = Color3.fromRGB(0, 255, 255)
 
 Assets.Name = "Assets"
 Assets.Parent = SysBroker
@@ -2964,10 +2952,10 @@ WhitelistTarget_Button.MouseButton1Click:Connect(function()
 					table.remove(ScriptWhitelist, i)
 				end
 			end
-			SendNotify("System Broken",TargetedPlayer.." removed from whitelist.",5)
+			SendNotify("kiaal",TargetedPlayer.." removed from whitelist.",5)
 		else
 			table.insert(ScriptWhitelist, Players[TargetedPlayer].UserId)
-			SendNotify("System Broken",TargetedPlayer.." added to whitelist.", 5)
+			SendNotify("kiaal",TargetedPlayer.." added to whitelist.", 5)
 		end
 	end
 end)
@@ -3384,7 +3372,7 @@ Day_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 14
 	else
-		SendNotify("System Broken","Please turn off shaders.",5)
+		SendNotify("kiaal","Please turn off shaders.",5)
 	end
 end)
 
@@ -3392,7 +3380,7 @@ Night_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 19
 	else
-		SendNotify("System Broken","Please turn off shaders.",5)
+		SendNotify("kiaal","Please turn off shaders.",5)
 	end
 end)
 
@@ -3420,7 +3408,7 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("System Broken","Loading free emotes.\nCredits: Gi#7331")
+		SendNotify("kiaal","Loading free emotes.\nCredits: dnwua")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AllEmotes"))()
 	end
 end)
@@ -3458,7 +3446,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("System Broken","Targeted player left/rejoined.",5)
+			SendNotify("kiaal","Targeted player left/rejoined.",5)
 		end
 	end)
 end)
@@ -3471,19 +3459,19 @@ plr.CharacterAdded:Connect(function(x)
 	end
 	if PotionDi_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionDi_Button)
-		SendNotify("System Broken","PotionDick was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","PotionDick was automatically disabled due to your character respawn",5)
 	end
 	if PotionFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionFling_Button)
-		SendNotify("System Broken","PotionFling was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","PotionFling was automatically disabled due to your character respawn",5)
 	end
 	if AntiRagdoll_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(AntiRagdoll_Button)
-		SendNotify("System Broken","AntiRagdoll was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","AntiRagdoll was automatically disabled due to your character respawn",5)
 	end
 	if SpamMines_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(SpamMines_Button)
-		SendNotify("System Broken","SpamMines was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","SpamMines was automatically disabled due to your character respawn",5)
 	end
 	if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(Fly_Button)
@@ -3525,12 +3513,12 @@ plr.CharacterAdded:Connect(function(x)
 		end
 		if not (count == original_ammount) then
 			SysBroker:Destroy()
-			SendNotify("System Broken","An unexpected error occurred, re-joining...")
+			SendNotify("kiaal","An unexpected error occurred, re-joining...")
 			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 		end
 	else
 		SysBroker:Destroy()
-		SendNotify("System Broken","An unexpected error occurred, re-joining...")
+		SendNotify("kiaal","An unexpected error occurred, re-joining...")
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 	end
 	appearance:Destroy()
@@ -3577,18 +3565,17 @@ task.spawn(function()
 
 			if (plr.Name ~= original_name) or (plr.DisplayName ~= original_display) or (plr.UserId ~= plr.CharacterAppearanceId) then
 				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
+				SendNotify("kiaal","An unexpected error occurred, re-joining...")
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 			if (date_1 ~= original_date) and (date_2 ~= original_date) and (date_3 ~= original_date) then
 				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
+				SendNotify("kiaal","An unexpected error occurred, re-joining...")
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 		end)
 	end
 end)
 
-SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
-setclipboard("https://discord.gg/RkhpySwNR9")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/premium"))() -- load the premium
+SendNotify("kiaal","Gui developed by Dnwua ",10)
+loadstring(game%3AHttpGet(%22https%3A%2F%2Fraw.githubusercontent.com%2FRayan511x55x%2FScripts%2Fmain%2FSystemBrokenPremium.lua.txt%22))() -- load the premium
