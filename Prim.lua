@@ -1,8 +1,9 @@
+print("GOOD")
 local players = game:GetService("Players")
 local plr = players.LocalPlayer
 local OnBenx = false
 local OnBunny = false
-local prefix = "."
+local prefix = "/"
 local Flinging = false
 local PushTool = nil
 
@@ -10,9 +11,7 @@ local PushTool = nil
 local BrokenVip = {}
 local BrokenPremium = {}
 local BrokenPuppeter = {}
-local BrokenStaff = {
-	3707654214
-}
+local BrokenStaff = {3707654214}
 
 -- ASSETS
 
