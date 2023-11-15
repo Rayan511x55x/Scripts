@@ -3578,4 +3578,4 @@ task.spawn(function()
 end)
 
 SendNotify("kiaal","Gui developed by Dnwua ",10)
-loadstring(game%3AHttpGet(%22https%3A%2F%2Fraw.githubusercontent.com%2FRayan511x55x%2FScripts%2Fmain%2FSystemBrokenPremium.lua.txt%22))() -- load the premium
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Rayan511x55x/Scripts/main/SystemBrokenPremium.lua"))() -- load the premium
