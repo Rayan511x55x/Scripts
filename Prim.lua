@@ -1,4 +1,4 @@
-SendNotify("kiaal","An unexpected error occurred, re-joining...")
+print("hi")
 local players = game:GetService("Players")
 local plr = players.LocalPlayer
 local OnBenx = false
