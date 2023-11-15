@@ -1,6 +1,6 @@
 --RELOAD GUI
 if game.CoreGui:FindFirstChild("SysBroker") then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "System Broken",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Kiaal",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
 local version = 2
@@ -50,10 +50,10 @@ end
 
 local function ChangeToggleColor(Button)
 	led = Button.Ticket_Asset
-	if led.ImageColor3 == Color3.fromRGB(255, 0, 0) then
+	if led.ImageColor3 == Color3.fromRGB(205, 0, 0) then
 		led.ImageColor3 = Color3.fromRGB(0, 255, 0)
 	else
-		led.ImageColor3 = Color3.fromRGB(255, 0, 0)
+		led.ImageColor3 = Color3.fromRGB(205, 0, 0)
 	end
 end
 
@@ -390,7 +390,7 @@ SysBroker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Background.Name = "Background"
 Background.Parent = SysBroker
 Background.AnchorPoint = Vector2.new(0.5, 0.5)
-Background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Background.BackgroundColor3 = Color3.fromRGB(255, 30, 30)
 Background.BorderColor3 = Color3.fromRGB(0, 255, 255)
 Background.Position = UDim2.new(0.5, 0, 0.5, 0)
 Background.Size = UDim2.new(0, 500, 0, 350)
@@ -412,7 +412,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/SYSTEMBROKEN\\___"
+TitleBarLabel.Text = "kiaal"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -518,20 +518,6 @@ Misc_Section_Button.TextScaled = true
 Misc_Section_Button.TextSize = 14.000
 Misc_Section_Button.TextWrapped = true
 
-Credits_Section_Button.Name = "Credits_Section_Button"
-Credits_Section_Button.Parent = SectionList
-Credits_Section_Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-Credits_Section_Button.BackgroundTransparency = 0.500
-Credits_Section_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Credits_Section_Button.BorderSizePixel = 0
-Credits_Section_Button.Position = UDim2.new(0, 0, 0, 265)
-Credits_Section_Button.Size = UDim2.new(0, 105, 0, 30)
-Credits_Section_Button.Font = Enum.Font.Oswald
-Credits_Section_Button.Text = "Credits"
-Credits_Section_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-Credits_Section_Button.TextScaled = true
-Credits_Section_Button.TextSize = 14.000
-Credits_Section_Button.TextWrapped = true
 
 Game_Section.Name = "Game_Section"
 Game_Section.Parent = Background
@@ -2517,7 +2503,7 @@ end)
 CMDBar.FocusLost:Connect(function()
 	command = CMDBar.Text
 	Players:Chat(command)
-	SendNotify("System Broken",("Executed "..command),5)
+	SendNotify("kiaal",("Executed "..command),5)
 	CMDBar.Text = ""
 end)
 
@@ -2530,7 +2516,7 @@ WalkSpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 16
 		end
 		plr.Character.Humanoid.WalkSpeed = tonumber(Speed)
-		SendNotify("System Broken","Walk speed updated.",5)
+		SendNotify("kiaal","Walk speed updated.",5)
 	end)
 end)
 
@@ -2541,7 +2527,7 @@ JumpPower_Button.MouseButton1Click:Connect(function()
 			Power = 50
 		end
 		plr.Character.Humanoid.JumpPower = tonumber(Power)
-		SendNotify("System Broken","Jump power updated.",5)
+		SendNotify("kiaal","Jump power updated.",5)
 	end)
 end)
 
@@ -2552,7 +2538,7 @@ FlySpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 50
 		end
 		FlySpeed = tonumber(Speed)
-		SendNotify("System Broken","Fly speed updated.",5)
+		SendNotify("kiaal","Fly speed updated.",5)
 	end)
 end)
 
@@ -2565,12 +2551,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("System Broken","Checkpoint saved.",5)
+	SendNotify("kiaal","Checkpoint saved.",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("System Broken","Checkpoint cleared.",5)
+	SendNotify("kiaal","Checkpoint cleared.",5)
 end)
 
 local flying = true
@@ -3384,7 +3370,7 @@ Day_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 14
 	else
-		SendNotify("System Broken","Please turn off shaders.",5)
+		SendNotify("kiaal","Please turn off shaders.",5)
 	end
 end)
 
@@ -3392,7 +3378,7 @@ Night_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 19
 	else
-		SendNotify("System Broken","Please turn off shaders.",5)
+		SendNotify("kiaal","Please turn off shaders.",5)
 	end
 end)
 
@@ -3458,7 +3444,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("System Broken","Targeted player left/rejoined.",5)
+			SendNotify("kiaal","Targeted player left/rejoined.",5)
 		end
 	end)
 end)
@@ -3471,19 +3457,19 @@ plr.CharacterAdded:Connect(function(x)
 	end
 	if PotionDi_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionDi_Button)
-		SendNotify("System Broken","PotionDick was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","PotionDick was automatically disabled due to your character respawn",5)
 	end
 	if PotionFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionFling_Button)
-		SendNotify("System Broken","PotionFling was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","PotionFling was automatically disabled due to your character respawn",5)
 	end
 	if AntiRagdoll_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(AntiRagdoll_Button)
-		SendNotify("System Broken","AntiRagdoll was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","AntiRagdoll was automatically disabled due to your character respawn",5)
 	end
 	if SpamMines_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(SpamMines_Button)
-		SendNotify("System Broken","SpamMines was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","SpamMines was automatically disabled due to your character respawn",5)
 	end
 	if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(Fly_Button)
@@ -3491,7 +3477,7 @@ plr.CharacterAdded:Connect(function(x)
 		Fly_Pad.Visible = false
 		KeyDownFunction:Disconnect()
 		KeyUpFunction:Disconnect()
-		SendNotify("System Broken","Fly was automatically disabled due to your character respawn",5)
+		SendNotify("kiaal","Fly was automatically disabled due to your character respawn",5)
 	end
 	x.Humanoid.Died:Connect(function()
 		pcall(function()
@@ -3525,12 +3511,12 @@ plr.CharacterAdded:Connect(function(x)
 		end
 		if not (count == original_ammount) then
 			SysBroker:Destroy()
-			SendNotify("System Broken","An unexpected error occurred, re-joining...")
+			SendNotify("kiaal","An unexpected error occurred, re-joining...")
 			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 		end
 	else
 		SysBroker:Destroy()
-		SendNotify("System Broken","An unexpected error occurred, re-joining...")
+		SendNotify("kiaal","An unexpected error occurred, re-joining...")
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 	end
 	appearance:Destroy()
@@ -3541,7 +3527,7 @@ task.spawn(function()
 		pcall(function()
 			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/version"))()
 			if version<GuiVersion then
-				SendNotify("System Broken","You are not using the latest version, please run the script again.",5)
+				SendNotify("kiaal","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
 				SysBroker:Destroy()
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
@@ -3577,18 +3563,17 @@ task.spawn(function()
 
 			if (plr.Name ~= original_name) or (plr.DisplayName ~= original_display) or (plr.UserId ~= plr.CharacterAppearanceId) then
 				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
+				SendNotify("kiaal","An unexpected error occurred, re-joining...")
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 			if (date_1 ~= original_date) and (date_2 ~= original_date) and (date_3 ~= original_date) then
 				SysBroker:Destroy()
-				SendNotify("System Broken","An unexpected error occurred, re-joining...")
+				SendNotify("kiaal","An unexpected error occurred, re-joining...")
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 		end)
 	end
 end)
 
-SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
-setclipboard("https://discord.gg/RkhpySwNR9")
+SendNotify("kiaal",10)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/premium"))() -- load the premium
