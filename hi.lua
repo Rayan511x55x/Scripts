@@ -89,9 +89,7 @@
  Loopmute = false
  Loopglitch = false
  Watch = false
- local Admin = {
-3707654214
-}
+ local Admin = {3707654214}
  
  -- [[ HAT ORBIT (PATCHED IN MOST GAMES) ]]
  local Offset = 10
