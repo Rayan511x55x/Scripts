@@ -90,8 +90,7 @@
  Loopglitch = false
  Watch = false
  local Admin = {
-3707654214,
-5111v,
+3707654214
 }
  
  -- [[ HAT ORBIT (PATCHED IN MOST GAMES) ]]
