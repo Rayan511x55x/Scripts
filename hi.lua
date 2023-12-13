@@ -15,12 +15,6 @@
 	 Loaded.Wait(Loaded);
 	 wait(1.5)
  end
-plr.Character["Falling down"].Disabled = bool
-plr.Character["Swimming"].Disabled = bool
-plr.Character["StartRagdoll"].Disabled = bool
-plr.Character["Pushed"].Disabled = bool
-plr.Character["RagdollMe"].Disabled = bool
-end
 
 
  -- Notification library
