@@ -1395,7 +1395,7 @@ if msg:sub(1, 7) == Prefix .. "unspam" then
         end
 
         -- BANG:
-        if msg:sub(1, 5) == Prefix .. "bang" then
+        if msg:sub(1, 5) == Prefix .. "b" then
 
             local args = getArgs(message:sub(7))
             local targetPLR = getFullPlayerName(args[1])
@@ -1468,7 +1468,7 @@ if msg:sub(1, 7) == Prefix .. "unspam" then
         end
 
         -- FACEBANG:
-        if msg:sub(1, 9) == Prefix .. "facebang" then
+        if msg:sub(1, 9) == Prefix .. "fb" then
 
             local args = getArgs(message:sub(11))
             local targetPLR = getFullPlayerName(args[1])
@@ -1541,7 +1541,7 @@ if msg:sub(1, 7) == Prefix .. "unspam" then
 
         end
 
-        if msg:sub(1, 7) == Prefix .. "unbang" then
+        if msg:sub(1, 7) == Prefix .. "ub" then
 
             function runCode()
                 if anim then
@@ -1565,7 +1565,7 @@ if msg:sub(1, 7) == Prefix .. "unspam" then
 
         end
 
-        if msg:sub(1, 8) == Prefix .. "unfbang" then
+        if msg:sub(1, 8) == Prefix .. "ufb" then
 
             function runCode()
                 if anim2 then
