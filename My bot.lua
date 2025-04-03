@@ -472,16 +472,51 @@ if LocalPLR.Name ~= Username then
 
         end
 
-        -- CHAT:
-        if msg:sub(1, 5) == Prefix .. "chat" then
+local chatting = false -- Variable to track chat status
 
-            if player.Name ~= Username and not isAdmin(player.Name) then
-                return
-            end
-
-            chat(message:sub(7))
-
+-- CHAT:
+if msg:sub(1, 5) == Prefix .. "chat" then
+    if player.Name ~= Username and not isAdmin(player.Name) then
+        return
+    end
+    
+    local message = msg:sub(7) -- Extract message after the command
+    if message and message ~= "" then
+        chatting = true
+        while chatting do
+            chat(message)
+            wait(1) -- Prevents infinite rapid spam
         end
+    end
+end
+
+-- UNCHAT:
+if msg:sub(1, 7) == Prefix .. "unchat" then
+    if player.Name ~= Username and not isAdmin(player.Name) then
+        return
+    end
+
+    chatting = false -- Stop chatting
+        end
+
+
+
+
+
+-- the void
+
+
+
+
+
+
+
+        
+
+
+
+
+        
 
         -- SIT:
         if msg:sub(1, 4) == Prefix .. "sit" then
