@@ -507,35 +507,26 @@ if msg:sub(1, 5) == Prefix .. "spam" then
         return
     end
 
-    local message = msg:sub(7) -- Extract the message
+    local message = msg:sub(7) -- Extract message after command
     if message and message ~= "" then
         spamming = true
-        while spamming do
-            chat(message)
-            wait(1) -- Prevent excessive spam
-
-            -- Check if "unspam" was typed
-            local newMsg = getLatestMessage(player) -- Function to check the latest message
-            if newMsg and newMsg:sub(1, 7) == Prefix .. "unspam" then
-                spamming = false
-                break
+        spawn(function() -- Run spam in a separate thread
+            while spamming do
+                chat(message)
+                wait(1) -- Prevent excessive spam
             end
-        end
+        end)
     end
+end
+
+-- UNSPAM Command
+if msg:sub(1, 7) == Prefix .. "unspam" then
+    if player.Name ~= Username and not isAdmin(player.Name) then
+        return
+    end
+
+    spamming = false -- Stop spamming immediately
         end
-
--- the void
-
-
-
-
-
-
-
-        
-
-
-
 
         
 
