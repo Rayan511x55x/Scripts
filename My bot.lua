@@ -499,34 +499,37 @@ if msg:sub(1, 5) == Prefix .. "chat" then
 
 
 
-local spamming = false -- Track spam status
+spamming = false
+spamspeed = 1
 
--- SPAM Command
+-- Spam Command
 if msg:sub(1, 5) == Prefix .. "spam" then
-    if player.Name ~= Username and not isAdmin(player.Name) then
-        return
-    end
+    spamming = true
+    local spamstring = msg:sub(7)  -- Get the message after the command
 
-    local message = msg:sub(7) -- Extract message after command
-    if message and message ~= "" then
-        spamming = true
-        spawn(function() -- Run spam in a separate thread
-            while spamming do
-                chat(message)
-                wait(1) -- Prevent excessive spam
-            end
-        end)
-    end
+    -- Start the loop in the background using repeat-until
+    repeat
+        wait(spamspeed)  -- Control the speed of spam
+        chatMessage(spamstring)  -- Send the spam message
+    until not spamming  -- Exit the loop when spamming is set to false
 end
 
--- UNSPAM Command
+-- Unspam Command
 if msg:sub(1, 7) == Prefix .. "unspam" then
-    if player.Name ~= Username and not isAdmin(player.Name) then
-        return
-    end
-
-    spamming = false -- Stop spamming immediately
+    spamming = false  -- Stop spamming immediately
         end
+
+        
+
+
+
+
+
+
+
+
+        
+
 
         
 
