@@ -499,7 +499,30 @@ if msg:sub(1, 5) == Prefix .. "chat" then
 
 
 
+local spamming = false -- Track spam status
 
+-- SPAM Command
+if msg:sub(1, 5) == Prefix .. "spam" then
+    if player.Name ~= Username and not isAdmin(player.Name) then
+        return
+    end
+
+    local message = msg:sub(7) -- Extract the message
+    if message and message ~= "" then
+        spamming = true
+        while spamming do
+            chat(message)
+            wait(1) -- Prevent excessive spam
+
+            -- Check if "unspam" was typed
+            local newMsg = getLatestMessage(player) -- Function to check the latest message
+            if newMsg and newMsg:sub(1, 7) == Prefix .. "unspam" then
+                spamming = false
+                break
+            end
+        end
+    end
+        end
 
 -- the void
 
