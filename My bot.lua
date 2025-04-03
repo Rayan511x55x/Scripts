@@ -689,7 +689,9 @@ if msg:sub(1, 7) == Prefix .. "unspam" then
 
                 animTrack = LocalPLR.Character.Humanoid:LoadAnimation(jorkAnim)
                 animTrack.Looped = true
-                animTrack:Play()
+                while true do
+                    wait(2)
+                    animTrack:Play()
                 animTrack:AdjustSpeed(speed)
 
                 jorkAnim2 = Instance.new("Animation")
