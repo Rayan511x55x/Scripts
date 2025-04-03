@@ -486,18 +486,15 @@ if msg:sub(1, 5) == Prefix .. "chat" then
         while chatting do
             chat(message)
             wait(1) -- Prevent spam
-            if not chatting then break end -- Check if "unchat" was called
+
+            -- Check if "unchat" was typed
+            local newMsg = getLatestMessage(player) -- Function to check the latest message
+            if newMsg and newMsg:sub(1, 7) == Prefix .. "unchat" then
+                chatting = false
+                break
+            end
         end
     end
-end
-
--- UNCHAT Command
-if msg:sub(1, 7) == Prefix .. "unchat" then
-    if player.Name ~= Username and not isAdmin(player.Name) then
-        return
-    end
-
-    chatting = false -- Stop the chat loop
         end
 
 
